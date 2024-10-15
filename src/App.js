@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/data/user');
+        const response = await axios.get(`${process.env.API_URL}/api/data/user`);
         setTime(response.data.hora);
         setWeight(response.data.gramos);
         setPlateWeight(response.data.plateWeight);
