@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.API_URL}/api/data/user`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/data/user`);
         setTime(response.data.hora);
         setWeight(response.data.gramos);
         setPlateWeight(response.data.plateWeight);
@@ -42,7 +42,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${process.env.API_URL}/api/data`, { hora: time, gramos: weight });
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/data`, { hora: time, gramos: weight });
       console.log('Data updated successfully');
     } catch (error) {
       console.error('Error updating data:', error);
@@ -53,7 +53,7 @@ function App() {
     e.preventDefault();
     console.log('Botón "Dar Comida" clickeado');
     try {
-      await axios.put(`${process.env.API_URL}/api/darComida`);
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/darComida`);
       console.log('Comida dada exitosamente');
     } catch (error) {
       console.error('Error al dar comida:', error);
