@@ -36,7 +36,8 @@ function App() {
   };
 
   const handleWeightChange = (e) => {
-    setWeight(e.target.value);
+    const value = Math.max(0, Math.min(e.target.value, 255));
+    setWeight(value);
   };
 
   const handleSubmit = async (e) => {
@@ -69,13 +70,13 @@ function App() {
           <input type="time" value={time} onChange={handleTimeChange} className="form-input" />
         </label>
         <label className="form-label">
-          Gramaje:
-          <input type="number" value={weight} onChange={handleWeightChange} className="form-input" />
+          Gramos a servir:
+          <input type="number" value={weight} onChange={handleWeightChange} min="0" max="255" className="form-input" />
         </label>
         <button type="submit" className="submit-button">Actualizar</button>
       </form>
       <p className="info">Peso del plato: {plateWeight} g</p>
-      <p className="info">Peso del tacho lleno: {bucketWeight} g</p>
+      <p className="info">Peso del tacho de comida: {bucketWeight} g</p>
       <button onClick={handleFeedPet} type= "submit"className="submit-button">Dar Comida</button>
     </div>
   );
