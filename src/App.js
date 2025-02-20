@@ -75,8 +75,8 @@ function App() {
         </label>
         <button type="submit" className="submit-button">Actualizar</button>
       </form>
-      <p className="info">Peso del plato: {plateWeight} g</p>
-      <p className="info">Peso del tacho de comida: {bucketWeight} g</p>
+      <p className="info">Peso del plato: {Math.max(0, plateWeight)} g</p>
+      <p className="info">Peso del tacho de comida: {Math.max(0, bucketWeight)} g</p>
       <button onClick={handleFeedPet} type= "submit"className="submit-button">Dar Comida</button>
     </div>
   );
