@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="title">Información del comedero de perros</h1>
+      <h1 className="title">Información del comedero de mascotas</h1>
       <form onSubmit={handleSubmit} className="form">
         <label className="form-label">
           Hora:
